@@ -17,6 +17,8 @@ dunst &
 #sleep 2s
  
 batterymon -t gnome & 
+
+xbindkeys &
  
 sleep 1
 nm-applet &
