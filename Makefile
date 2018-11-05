@@ -48,6 +48,8 @@ install: all
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
 	@cp -f startdwm ${DESTDIR}${PREFIX}/bin
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/startdwm
+	@cp -f dwm.desktop /usr/share/xsessions 
+	@chmod 755 /usr/share/xsessions/dwm.desktop
 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	@sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
@@ -57,6 +59,7 @@ uninstall:
 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
 	@rm -f ${DESTDIR}${PREFIX}/bin/dwm
 	@rm -f ${DESTDIR}${PREFIX}/bin/startdwm
+	@rm -f /usr/share/xsessions/dwm.desktop 
 	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
 	@rm -f ${DESTDIR}${MANPREFIX}/man1/dwm.1
 
